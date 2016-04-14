@@ -18,8 +18,8 @@ for line in sys.stdin:
         # print data  
         # print words
         # increase counters
-        if data["retweeted"] == False:
-            print '%s\t%s' % ("#countForLab2", 1)
+        if "retweeted_status" not in data:
+            print '%s\t%s' % ("#countForLab2: ", 1)
             words = data["text"].lower().split()
 
             for word in words:
