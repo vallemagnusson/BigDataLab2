@@ -5,7 +5,7 @@ import ujson
 import time
 
 # input comes from STDIN (standard input)
-dictionary = ["han","hon","den","det","denna","denne","hen"]
+dictionary = ["han","hon","den","det","denna","denne","hen","he","she"]
 start = time.time()
 for line in sys.stdin:
     # print line
