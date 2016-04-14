@@ -16,16 +16,19 @@ for line in sys.stdin:
         # split the line into words
         ###words = line.split()
         # print data  
-        words = data["text"].lower().split()
         # print words
         # increase counters
-        for word in words:
-            if word in dictionary:
-                # write the results to STDOUT (standard output);
-                # what we output here will be the input for the
-                # Reduce step, i.e. the input for reducer.py
-                #
-                # tab-delimited; the trivial word count is 1
-                print '%s\t%s' % (word, 1)
+        if data["retweeted"] == False:
+            print '%s\t%s' % ("#countForLab2", 1)
+            words = data["text"].lower().split()
+
+            for word in words:
+                if word in dictionary:
+                    # write the results to STDOUT (standard output);
+                    # what we output here will be the input for the
+                    # Reduce step, i.e. the input for reducer.py
+                    #
+                    # tab-delimited; the trivial word count is 1
+                    print '%s\t%s' % (word, 1)
     except Exception:
         pass
